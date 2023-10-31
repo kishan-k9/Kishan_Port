@@ -36,7 +36,8 @@ function ResumeNew() {
       <Container fluid className="resume-section">
         <Particle />
         <Row className="resume">
-        <div style={{ height: heightOfMyScreen > '619' ? '1430px' : '500px', overflowY: 'hidden' }}>
+          {/* {console.log(heightOfMyScreen)} */}
+        <div style={{ height: heightOfMyScreen > '618' ? '1430px' : '500px', overflowY: 'hidden' }}>
             <Document file={pdf} className="d-flex justify-content-center">
               <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
             </Document>
