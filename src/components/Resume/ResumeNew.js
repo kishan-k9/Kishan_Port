@@ -10,11 +10,13 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 function ResumeNew() {
   const [heightOfMyScreen, setHeightOfMyScreen] = useState(window.innerHeight);
+  const [widthOfMyScreen, setWidthOfMyScreen] = useState(window.innerWidth);
 
   useEffect(() => {
     // Update the screen height when the window is resized
     const handleResize = () => {
       setHeightOfMyScreen(window.innerHeight);
+      setWidthOfMyScreen(window.innerWidth);
     };
 
     // Add an event listener for window resize
@@ -25,21 +27,39 @@ function ResumeNew() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  const [width, setWidth] = useState(1200);
+
+  const [isMobile, setIsMobile] = useState({});
 
   useEffect(() => {
-    setWidth(window.innerWidth);
+    if (heightOfMyScreen > 621) {
+      setIsMobile({
+        scaleProp: 0.6,
+        heightProp: '31rem'
+      })
+    } else {
+      setIsMobile({
+        scaleProp: 1.6,
+        heightProp: '83rem'
+      })
+    }
   }, []);
 
   return (
     <div>
       <Container fluid className="resume-section">
-        <Particle />
+        {/* <Particle /> */}
         <Row className="resume">
-          {/* {console.log(heightOfMyScreen)} */}
-        <div style={{ height: heightOfMyScreen > '618' ? '1430px' : '500px', overflowY: 'hidden' }}>
+          {/* {console.log("height: " + heightOfMyScreen)}
+          {heightOfMyScreen}
+          <br />
+          {console.log("width: " + widthOfMyScreen)}
+          {widthOfMyScreen} */}
+          {/* <div style={{ height: heightOfMyScreen > '606' ? '800px' : '400px' , overflowY: "hidden" }}> */}
+          {/* <div style={{ height: '33rem' , overflowY: "hidden" }}> */}
+          <div style={{ height: `${isMobile.heightProp}`, overflowY: "hidden" }}>
             <Document file={pdf} className="d-flex justify-content-center">
-              <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
+              {/* <Page pageNumber={1} scale={0.6} /> */}
+              <Page pageNumber={1} scale={isMobile.scaleProp} />
             </Document>
           </div>
         </Row>
