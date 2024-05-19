@@ -2,9 +2,9 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import editor from "../../Assets/Projects/cs.png";
+import editor from "../../Assets/Projects/pldp.png";
 import chatify from "../../Assets/Projects/hrdr.png";
-import bitsOfCode from "../../Assets/Projects/tfi.png";
+import bitsOfCode from "../../Assets/Projects/tlp.png";
 
 function Projects() {
   return (
