@@ -33,8 +33,8 @@ function Projects() {
             <ProjectCard
               imgPath={bitsOfCode}
               isBlog={false}
-              title="Text from Image"
-              description="The text extractor will allow you to extract text from any image. You may upload an image or document (.pdf) and the tool will pull text from the image. Our image to text converter allows you to extract text from images in one click. It provides 100% accurate results."
+              title="Tomato Leaf Prediction"
+              description="The Tomato Leaf Prediction Deep Learning Project is an innovative endeavour aimed at leveraging deep learning techniques to detect and classify diseases and anomalies in tomato plants by analysing images of their leaves."
               ghLink="https://github.com/kishan-k9/Projects/tree/main/Extracting%20structured%20information%20from%20scanned%20invoices%20or%20invoice%20images"
               // demoLink=""
             />
@@ -44,8 +44,8 @@ function Projects() {
             <ProjectCard
               imgPath={editor}
               isBlog={false}
-              title="Project Name..."
-              description="This will be added soon..."
+              title="Plant Leaf Disease Prediction"
+              description="In this project, we've enhanced our Tomato Leaf Disease Detection system to cover 14-15 plant types with 39 disease classes. We trained our model using a training dataset containing 61,486 images. The model is used to predict the diseases of multiple plants by processing the input images."
               // ghLink=""
               demoLink=""
             />
